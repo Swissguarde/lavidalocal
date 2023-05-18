@@ -1,7 +1,22 @@
-import Header from "@/components/Header/Header";
+import MainBar from "@/components/Dashboard/MainBar";
+import Sidebar from "@/components/Dashboard/Sidebar";
+import Header, { MenuItemProp } from "@/components/Header/Header";
 import Head from "next/head";
+import { useState } from "react";
+
+const menuTab: Array<MenuItemProp> = [
+  { title: "Edit Profile" },
+  { title: "Medical" },
+  { title: "Next of kin" },
+  { title: "Dependants" },
+  { title: "Education History" },
+  { title: "Employment History" },
+  { title: "Documents" },
+];
 
 export default function Home() {
+  const [menuActive, setMenuActive] = useState(menuTab[0].title);
+
   return (
     <>
       <Head>
@@ -12,6 +27,15 @@ export default function Home() {
       </Head>
       <main>
         <Header />
+
+        <div className="mt-10 flex space-x-4 pb-32 md:px-20">
+          <Sidebar
+            menuTab={menuTab}
+            menuActive={menuActive}
+            setMenuActive={setMenuActive}
+          />
+          <MainBar menuActive={menuActive} />
+        </div>
       </main>
     </>
   );

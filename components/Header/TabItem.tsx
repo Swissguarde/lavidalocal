@@ -9,7 +9,7 @@ type TabItemProps = {
 const TabItem: React.FC<TabItemProps> = ({ item, selected, setMenuActive }) => {
   return (
     <div
-      className={`flex h-10 cursor-pointer items-center justify-center p-2 text-xs duration-300 md:text-base ${
+      className={`flex h-10 cursor-pointer items-center justify-center p-1 text-xs duration-300 md:p-2 md:text-base ${
         selected ? "bg-gray-300 text-black" : "bg-blue-900 text-white"
       }`}
       onClick={() => setMenuActive(item.title)}

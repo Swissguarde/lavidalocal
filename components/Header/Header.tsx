@@ -21,11 +21,11 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <>
-      <header className="flex h-14 items-center bg-blue-900 px-10 md:px-40">
+      <header className="flex h-14 items-center bg-blue-900 px-10 md:px-20">
         <h2 className="text-xl font-bold">LAVIDALOCAL ENTERPRISES</h2>
       </header>
       <div className="flex justify-center md:justify-between">
-        <div className="flex h-10 w-fit items-center bg-blue-900 md:mx-40">
+        <div className="flex h-10 w-fit items-center bg-blue-900 md:mx-20">
           {menuTab.map((item, i) => (
             <TabItem
               key={i}
@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = () => {
             />
           ))}
         </div>
-        <div className="mx-40 hidden md:flex">
+        <div className="mx-20 hidden md:flex">
           <button className="custom-btn">
             <CgProfile size={20} />
             Profile
